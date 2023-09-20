@@ -19,6 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/planning', function () {
+    return view('index');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -30,4 +38,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('events',EventController::class);
+
+
 require __DIR__.'/auth.php';
