@@ -17,7 +17,15 @@ class Event extends Model
     }
     protected $guarded = ['id'];
 
+    public static function boot()
+    {
+        parent::boot();
 
+        // Lors de la création d'un nouvel événement, définissez statut_id sur 1
+        static::creating(function ($event) {
+            $event->statut_id = 1; // Ou la valeur par défaut que vous souhaitez
+        });
+    }
 
 
 

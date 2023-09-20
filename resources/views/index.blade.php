@@ -102,8 +102,6 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         const calendarEl = document.getElementById('calendar');
-       // const eventId = calendarEl.dataset.id; 
-
         
         const calendar = new FullCalendar.Calendar(calendarEl, {
             
@@ -120,6 +118,7 @@
                         <h5>${event.title}</h5>
                         <p>Date de début : ${event.start.toLocaleString()}</p>
                         <p>Date de fin : ${event.end.toLocaleString()}</p>
+                        <p>Statut : ${event.extendedProps.statut}</p>
                     `;
 
                     modal.show();

@@ -14,7 +14,17 @@ class EventController extends Controller
 
     public function index()
     {
-       $events = Event::all();
+        $events = Event::with('statut')->get();
+       
+        $events = $events->map(function ($event) {
+            return [
+                'id' => $event->id,
+                'title' => $event->title,
+                'start' => $event->start,
+                'end' => $event->end,
+                'statut' => $event->statut->libelle,
+            ];
+        });
 
         return response()->json($events)->header('Content-Type', 'application/json');
            
