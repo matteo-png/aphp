@@ -12,7 +12,21 @@
     @include('menu/navbar')
 
     @include('menu/aside')
-
+    <div class="content-wrapper kanban">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Bienvenue sur l'application Ap-Hp</h1>
+          </div>
+        
+        </div>
+      </div>
+    </section>
+<section class="content pb-3">
+<img src="./../adminlte/img/img-aphp.png" alt="aphp image" width=100% height=100% >
+</section>
+</div>
 
 
 
