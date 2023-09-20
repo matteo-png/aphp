@@ -26,13 +26,14 @@
 
                 <li class="nav-header">Liens :</li>
                 <li class="nav-item">
-                    <a href="/events" class="nav-link active">
+                @if(Auth::user()->role_id == 2 || Auth::user()->role_id == 3)
+                    <a href="/planning" class="nav-link active">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>
                             Planning
                         </p>
                     </a>
-
+                @endif
 
                 </li>
 

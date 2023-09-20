@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Statut;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -24,7 +25,10 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        //$statut = Statut::all('id','libelle')->pluck('libelle','id');
+     
+        return view('event/modale/add');
+
     }
 
     /**
@@ -32,7 +36,8 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Event::create($request->all());
+        return view('/index');
     }
 
     /**
