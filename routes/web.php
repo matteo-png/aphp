@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\EventController;
-
+use \App\Http\Controllers\PlanningController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,9 +23,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/planning', function () {
+/*Route::get('/planning', function () {
     return view('index');
-});
+});*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,7 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('events',EventController::class);
+Route::resource('planning',PlanningController::class);
 
+Route::resource('events',EventController::class);
+Route::delete('events/destroy/{id}',[EventController::class, 'destroy']);
 
 require __DIR__.'/auth.php';

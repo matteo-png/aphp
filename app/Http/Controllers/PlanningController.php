@@ -2,22 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
-use App\Models\Statut;
 use Illuminate\Http\Request;
-
-class EventController extends Controller
+use App\Models\Event;
+class PlanningController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-
     public function index()
     {
-       $events = Event::all();
-
-        return response()->json($events)->header('Content-Type', 'application/json');
-           
+        return view('index');
     }
 
     /**
@@ -25,10 +19,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //$statut = Statut::all('id','libelle')->pluck('libelle','id');
-     
-        return view('event/modale/add');
-
+        //
     }
 
     /**
@@ -36,8 +27,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        Event::create($request->all());
-        return redirect()->route('planning.index');
+        //
     }
 
     /**
@@ -67,11 +57,8 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        $event = Event::findOrFail($id);
-
-        $event->delete();
-        return redirect()->route('planning.index')->with('success', 'Événement supprimé avec succès');
+        //
     }
 }

@@ -1,9 +1,9 @@
 <!-- Modal -->
-<div class="modal fade" id="AddTache" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddEvent" tabindex="-1" aria-labelledby="modaleEvent" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ajout d'un event  </h5>
+                <h5 class="modal-title">Ajout d'un event  </h5>
             </div>
             {!! Form::open(['route' => 'events.store']) !!}
             <div class="modal-body">
